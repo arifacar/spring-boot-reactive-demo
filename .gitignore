@@ -1,0 +1,15 @@
+.idea
+gradle
+.gradle
+
+reactive-api/gradle
+reactive-api/.gradle
+reactive-api/build
+
+reactive-domain/gradle
+reactive-domain/.gradle
+reactive-domain/build
+
+reactive-service/gradle
+reactive-service/.gradle
+reactive-service/build
