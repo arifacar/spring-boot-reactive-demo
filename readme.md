@@ -16,6 +16,20 @@ You will build a RESTful web service with Spring Webflux and a WebClient consume
 http://localhost:8081/api/v1/users/1
 ```
 
+**On Docker**
+
+```
+docker build --build-arg JAR_FILE=reactive-api/build/libs/\*.jar -t springio/gs-spring-boot-docker .
+```
+
+Manage the entire build for a complex maven project in a single command, ```docker-compose up.```
+
+```docker-compose up``` to build image and start container. Building the image automatically runs tests.
+
+
+```docker-compose down -v --rmi 'all'``` will close the container and delete the old image
+
+
 ## Features
 
 * Multi module with gradle
