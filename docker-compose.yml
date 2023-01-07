@@ -1,7 +1,15 @@
-version: '3'
+# Mongo docker image
+version: '3.7'
 services:
-  api:
-    build: ./
-    container_name: spring-boot-reactive-demo
+  mongodb_container:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: mongopw
     ports:
-      - "8081:8081"
+      - 27017:27017
+    volumes:
+      - mongodb_data_container:/data/db
+
+volumes:
+  mongodb_data_container:

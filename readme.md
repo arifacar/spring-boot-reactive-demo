@@ -27,9 +27,6 @@ Manage the entire build for a complex maven project in a single command, ```dock
 ```docker-compose up``` to build image and start container. Building the image automatically runs tests.
 
 
-```docker-compose down -v --rmi 'all'``` will close the container and delete the old image
-
-
 ## Features
 
 * Multi module with gradle

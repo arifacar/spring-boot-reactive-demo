@@ -1,16 +1,17 @@
 package com.arifacar.reactiveservice.service;
 
 import com.arifacar.reactivedomain.domain.User;
-import org.springframework.stereotype.Service;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.util.Random;
+public interface UserService {
+    Mono<User> getUserById(String id);
 
-@Service
-public class UserService {
+    Flux<User> getUsers();
 
-    public Mono<User> getUserById(int id) {
-        return Mono.just(new User(id, "Arif Acar", new Random().nextInt(20) + 20));
-    }
+    Mono<User> saveUser(User userDtoMono);
 
+    Mono<User> updateUser(String id, User userMono);
+
+    Mono<Void> deleteUser(String id);
 }
