@@ -13,8 +13,6 @@ import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import reactor.core.publisher.Flux;
 
-import java.util.concurrent.ThreadLocalRandom;
-
 @Configuration
 @EnableMongoRepositories
 public class MongoConfiguration extends AbstractReactiveMongoConfiguration {
@@ -29,12 +27,10 @@ public class MongoConfiguration extends AbstractReactiveMongoConfiguration {
     public MongoClient reactiveMongoClient() {
         return MongoClients.create("mongodb://root:mongopw@localhost:27017");
     }
-
     @Bean
     public ReactiveMongoTemplate reactiveMongoTemplate() {
         return new ReactiveMongoTemplate(reactiveMongoClient(), getDatabaseName());
     }
-
     @Bean
     @ConditionalOnProperty(prefix = "job.autorun", name = "enabled", havingValue = "true", matchIfMissing = true)
     public CommandLineRunner loadData(UserRepository repository) {

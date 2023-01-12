@@ -4,7 +4,7 @@ import com.arifacar.reactivedomain.domain.User;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public interface UserService {
+public sealed interface UserService  permits UserServiceImpl {
     Mono<User> getUserById(String id);
 
     Flux<User> getUsers();

@@ -2,17 +2,13 @@ package com.arifacar.reactiveservice.service;
 
 import com.arifacar.reactivedomain.domain.User;
 import com.arifacar.reactivedomain.repository.UserRepository;
-import com.mongodb.client.result.DeleteResult;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import static org.springframework.data.mongodb.core.query.Criteria.where;
-import static org.springframework.data.mongodb.core.query.Query.query;
-
 @Service
-public class UserServiceImpl implements UserService {
+public final class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private final ReactiveMongoTemplate template;
